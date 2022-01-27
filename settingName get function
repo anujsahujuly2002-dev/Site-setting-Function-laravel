@@ -1,0 +1,12 @@
+if(!function_exists('SiteSettingByName'))
+{
+    function SiteSettingByName($SettingName=Null)
+    {
+        if(!empty($SettingName))
+        {
+            $SettingVal='';
+            $SettingVal=  Site_settings::where('setting_name','=',$SettingName)->value('setting_val');
+        }
+         return $SettingVal; 
+    } 
+}
